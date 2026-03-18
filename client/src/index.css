@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Roboto+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* Theme: Black, Gold, Dark Grey */
+  --navy: #000000;
+  --light-navy: #1F2937;
+  --lightest-navy: #374151;
+  --slate: #D1D5DB;
+  --light-slate: #E5E7EB;
+  --lightest-slate: #F9FAFB;
+  --white: #ffffff;
+  --teal: #D4AF37;
+  --teal-tint: rgba(212, 175, 55, 0.1);
+  --shadow-red: rgba(212, 175, 55, 0.2);
+  --nav-height: 100px;
+  
+  --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+  --font-mono: 'Roboto Mono', 'Fira Code', monospace;
+  
+  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--navy);
+  color: var(--slate);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--lightest-slate);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--teal);
+  transform: translateY(-2px);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+main {
+  padding: 0 50px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1600px;
+  min-height: 100vh;
+}
+
+.section {
+  padding: 100px 0;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Numbered Section Titles */
+.numbered-heading {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 10px 0 40px;
+  width: 100%;
+  font-size: clamp(26px, 5vw, 32px);
+  white-space: nowrap;
+}
+
+.numbered-heading::after {
+  content: "";
+  display: block;
+  position: relative;
+  top: -5px;
+  width: 300px;
+  height: 1px;
+  margin-left: 20px;
+  background-color: var(--lightest-navy);
+}
+
+/* Custom Buttons */
+.btn {
+  color: var(--teal);
+  background-color: transparent;
+  border: 1px solid var(--teal);
+  border-radius: 4px;
+  padding: 1rem 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.btn:hover {
+  background-color: var(--teal-tint);
+  transform: translateY(-2px);
+}
+
+/* Fixed Sidebars */
+.orientation-left {
+  width: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 40px;
+  right: auto;
+  z-index: 10;
+  color: var(--light-slate);
+}
+
+.orientation-right {
+  width: 40px;
+  position: fixed;
+  bottom: 0;
+  left: auto;
+  right: 40px;
+  z-index: 10;
+  color: var(--light-slate);
+}
+
+.sidebar-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-list::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0 auto;
+  background-color: var(--light-slate);
+}
+
+.sidebar-link {
+  padding: 10px;
+  display: inline-block;
+  color: var(--light-slate);
+}
+
+.sidebar-link:hover {
+  color: var(--teal);
+  transform: translateY(-3px);
+}
+
+.email-link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  writing-mode: vertical-rl;
+  margin: 20px auto;
+  padding: 10px;
+  display: inline-block;
+}
+
+.email-link:hover {
+  color: var(--teal);
+  transform: translateY(-3px);
+}
+
+/* Cards (Generic) */
+.card {
+  background: var(--light-navy);
+  border-radius: 4px;
+  padding: 2rem;
+  transition: var(--transition);
+  box-shadow: 0 10px 30px -15px var(--shadow-red);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Hero Variables specifically */
+.hero-title {
+  color: var(--lightest-slate);
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 800;
+  margin: 0;
+}
+
+.hero-subtitle {
+  color: var(--slate);
+  font-size: clamp(30px, 6vw, 60px);
+  font-weight: 600;
+  line-height: 0.9;
+  margin-top: 10px;
+}
+
+.hero-description {
+  margin-top: 20px;
+  max-width: 540px;
+  font-size: 20px;
+  color: var(--slate);
+}
+
+.mono-accent {
+  font-family: var(--font-mono);
+  color: var(--teal);
+  font-size: 14px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--slate);
+}
